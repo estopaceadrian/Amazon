@@ -5,6 +5,7 @@ import {
   ShoppingCartIcon,
 } from '@heroicons/react/24/outline';
 
+import { signIn, signOut, useSession } from 'next-auth/react';
 function Header() {
   return (
     <header>
@@ -26,8 +27,8 @@ function Header() {
           <MagnifyingGlassIcon className="h-12 p-4" />
         </div>
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className=" link">
-            <p>Hello Adrian</p>
+          <div onClick={signIn} className="link">
+            <p className="hover:underline">Hello Adrian</p>
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
           <div className=" link">
